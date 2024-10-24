@@ -60,4 +60,23 @@ class DonutFactoryTest {
         assertEquals(costForTwoDozenDonuts, result);
 
     }
+    @org.junit.jupiter.api.Test
+    void getPriceOfDonuts_MoreThan6Dozen_get_30_percent_discount() {
+
+        // Fixed values for this test
+        int sixDozen = 72;
+        double costPerSixDozen = 25.2;
+        double unitPricePerDonut = .50;
+
+        // Arrange the test object(s)
+        DonutFactory df = new DonutFactory(unitPricePerDonut);
+
+        // Act on the object(s)
+        double result = df.getPriceOfDonuts(sixDozen);
+
+        // Assert what SHOULD happen
+        assertEquals(costPerSixDozen, result, .001);
+
+
+    }
 }
